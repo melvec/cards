@@ -33,5 +33,5 @@ To set up the project locally, follow these steps:
    git clone https://github.com/melvec/cards
    cd everclime
    npm install
-   npm start
+   npm run dev
    ```
