@@ -2,17 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ImpactCard from "./ImpactCard";
 import { ChevronLeft, ChevronRight } from "react-feather";
-
-const card1 =
-  "https://batrescue.org.au/wp-content/uploads/2021/06/david_white_flying_bat-img.jpg";
-const card2 =
-  "https://media.istockphoto.com/id/1496186646/photo/staying-connected-on-the-farm-via-mobile-network.jpg?s=1024x1024&w=is&k=20&c=F5xu6T8DIBZgjjHvbJATILiQU2KkEa2U4XNbUS6srkg=";
-const card3 =
-  "https://media.istockphoto.com/id/1435661969/photo/close-up-of-children-holding-a-planet-at-the-beach.jpg?s=1024x1024&w=is&k=20&c=yFUId3gMoFOOrXnWNEhn2uDhC4FMTYxHLmh4wzQyDX8=";
-const card4 =
-  "https://cdn.pixabay.com/photo/2023/12/14/18/38/sheep-8449481_1280.jpg";
-const card5 =
-  "https://cdn.pixabay.com/photo/2023/12/14/18/38/sheep-8449481_1280.jpg";
+import logobat from "../assets/logobat.webp";
 
 const ImageSlider = () => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
@@ -36,19 +26,69 @@ const ImageSlider = () => {
     });
   };
 
-  const images = [card1, card2, card3, card4, card5];
-
-  const card = {
-    title: "Bats rescue",
-    impact: "Animal treatment",
-    mainImage: "https://a-z-animals.com/media/2021/04/Fruit-bat-header.jpg",
-    contribution: "Contributed of total",
-    amount: "40%",
-    middleDescription: "tn",
-    rewards: [1, 2, 4],
-  };
+  const cards = [
+    {
+      card_type: "primary",
+      title: "Bats rescue",
+      impact: "Animal treatment",
+      logo: "https://batrescue.org.au/wp-content/uploads/2022/03/bat-rescure-logo.png",
+      mainImage: "https://a-z-animals.com/media/2021/04/Fruit-bat-header.jpg",
+      contribution: "Contributed of total",
+      amount: "40%",
+      middleDescription: "tn",
+      rewards: [1, 2, 4],
+    },
+    {
+      card_type: "secondary",
+      title: "Bats rescue Inc",
+      description:
+        "Bat Rescue Inc. is a non-proﬁt volunteer organisation whose members are permitted under Queensland’s Department of Environment and Science (DES) to rescue sick, injured and orphaned ﬂying-foxes and microbats.",
+      impact: "",
+      logo: "https://batrescue.org.au/wp-content/uploads/2021/07/conservation-icon.png",
+      mainImage: "",
+      contribution: "",
+      amount: "",
+      middleDescription: "",
+      rewards: [],
+    },
+    {
+      card_type: "secondary",
+      title: "Proof of Impact",
+      logo: "https://batrescue.org.au/wp-content/uploads/2021/07/conservation-icon.png",
+      impact: "Animal treatment",
+      mainImage:
+        "https://batrescue.org.au/wp-content/uploads/2021/05/Distribution-Range.png",
+      contribution: "Contributed of total",
+      amount: "40%",
+      middleDescription: "tn",
+      rewards: [1, 2, 4],
+    },
+    {
+      title: "Participating Brands",
+      impact: "Animal treatment",
+      logo: "https://batrescue.org.au/wp-content/uploads/2021/07/conservation-icon.png",
+      mainImage:
+        "https://batrescue.org.au/wp-content/uploads/2021/06/roosting-img.jpg",
+      contribution: "Contributed of total",
+      amount: "40%",
+      middleDescription: "tn",
+      rewards: [1, 2, 4],
+    },
+    {
+      card_type: "primary",
+      title: "Rewards",
+      impact: "",
+      logo: logobat,
+      mainImage: "",
+      contribution: "Contributed of total",
+      amount: "40%",
+      middleDescription: "tn",
+      rewards: [1, 2, 4],
+    },
+  ];
 
   const positions = ["center", "left1", "left", "right", "right1"];
+  // const positions = ["center", "left1", "right1"];
 
   const imageVariants = {
     center: { x: "0%", scale: 1, zIndex: 5 },
@@ -58,8 +98,8 @@ const ImageSlider = () => {
     right1: { x: "50%", scale: 0.7, zIndex: 3 },
   };
   return (
-    <div className="flex w-screen h-screen items-center justify-center bg-white">
-      {images.map((image, index) => (
+    <div className="flex h-screen w-screen items-center justify-center bg-gradient-to-b from-black via-neutral-800 to-gray-500/90">
+      {cards.map((card, index) => (
         <motion.div
           key={index}
           initial="center"

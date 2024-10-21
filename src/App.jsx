@@ -17,8 +17,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      {/* <ImpactCard {...sampleData} /> */}
+    <div className="flex justify-center items-center h-screen bg-black">
       <ImageSlider />
     </div>
   );
