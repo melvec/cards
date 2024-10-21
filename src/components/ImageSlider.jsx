@@ -106,7 +106,11 @@ const ImageSlider = () => {
           animate={positions[positionIndexes[index]]}
           variants={imageVariants}
           transition={{ duration: 0.5 }}
-          style={{ width: "40%", position: "absolute" }}
+          style={{
+            width:
+              positions[positionIndexes[index]] === "center" ? "50%" : "40%",
+            position: "absolute",
+          }}
         >
           <ImpactCard card={card} />
         </motion.div>
